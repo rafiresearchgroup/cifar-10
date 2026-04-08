@@ -22,3 +22,4 @@ class Config:
 
 
     save_dir : str = "/Users/rdallatorre/repos/cifar-10/trained_models/"
+    save_name: str = "best_model_cifar.pth"

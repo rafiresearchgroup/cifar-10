@@ -48,15 +48,15 @@ def train(model, train_loader, test_loader, optimizer, criterion, device, cfg):
         # test_loss = criterion(test_pred, test_labels)
         # test_acc = (test_pred.argmax(1) == test_pred).sum()
 
-        print(f"Epoch: {epoch_idx:02d}/{cfg.epochs} || " f"Train Loss: {train_loss:.4f} | Train Acc: {train_acc*100:.1f}% || " f" Test Loss: {test_loss:.4f} | Test Acc: {test_acc*100:.1f}%")
+        print(f"Epoch: {epoch_idx+1:02d}/{cfg.epochs} || " f"Train Loss: {train_loss:.4f} | Train Acc: {train_acc*100:.1f}% || " f" Test Loss: {test_loss:.4f} | Test Acc: {test_acc*100:.1f}%")
         # :02d    # ✅ integer: 2 digits wide, zero padded
         #:.1f    # ✅ float: just decimal places, no width before the dot
         # :08.2f   # 8 chars wide, zero padded  (no truncation)
 
         if test_acc > best_acc:
             best_acc = test_acc
-            torch.save(model.state_dict(), cfg.save_dir + "best_model.pth")
-            print(f"  → saved best model: {best_acc*100:.1f}%")           
+            torch.save(model.state_dict(), cfg.save_dir + cfg.save_name)
+            print(f"  → saved best model at epoch {epoch_idx+1}: {best_acc*100:.1f}%")           
 
 
 

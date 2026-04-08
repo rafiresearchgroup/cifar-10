@@ -65,6 +65,7 @@ def get_data_loader_mnist(cfg):
     #     ])
     train_transform=transforms.Compose([
         transforms.Pad(2),              # 28×28 → 32×32 first
+        transforms.Grayscale(num_output_channels=3),  # 1 → 3 channels
 
         transforms.ToTensor(),
         transforms.Normalize((0.1302),
@@ -78,6 +79,7 @@ def get_data_loader_mnist(cfg):
     #     ])
     test_transform=transforms.Compose([
         transforms.Pad(2),              # 28×28 → 32×32 first
+        transforms.Grayscale(num_output_channels=3),  # 1 → 3 channels
         transforms.ToTensor(),
         transforms.Normalize((0.1302),
                              (0.3069))

@@ -26,6 +26,17 @@ Epoch 2:
 
 
 
+CIFAR training (25 epochs):  Train 87% | Test 83%  ✅
+MNIST fine-tuning (25 epochs): Train 98% | Test 98.2% ✅
+CIFAR after fine-tuning:     Test 15.6%  ← expected, model forgot CIFAR
+
+
+Random init:      90.4% already at epoch 0!  ← faster bootstrap
+CIFAR pretrained: 47.6% at epoch 0           ← slower start
+Random final:     98.9%                       ← slightly higher
+CIFAR final:      98.2%                       ← slightly lower
+
+
 models:
 -------
 

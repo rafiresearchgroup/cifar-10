@@ -1,0 +1,33 @@
+Re-enabling Autocomplete in VSCode
+1. Quick Suggestions — search quick suggestions in Settings:
+Set other, comments, and strings all back to on
+2. Suggest on Trigger Characters — search suggest on trigger:
+Check the checkbox to re-enable it
+
+
+@dataclass
+class Config:
+
+
+
+df_ = df.groupby("medical_specialty")["transcription"].apply(
+    lambda x:x.str.len().median()
+)
+
+
+df_.sort_values(ascending=False)
+
+df['medical_specialty'].unique()
+top6 = df['medical_specialty'].value_counts().head(6).index.tolist()
+
+N1 = (df['medical_specialty'] == ' Radiology').sum()
+
+
+Missing values
+df.isnull().sum()
+
+df.groupby("label")["transcription_length"].agg(["mean", "median", "std"])
+
+df.groupby("medical_specialty")["transcription"].apply(
+    lambda x:x.isnull().sum()
+)

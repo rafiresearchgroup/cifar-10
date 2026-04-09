@@ -1,5 +1,5 @@
 
-from evaluate import evaluate
+from src.evaluate import evaluate
 import torch
 
 def train_one_epoch(model, train_loader, optimizer, criterion, device):

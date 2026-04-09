@@ -5,6 +5,25 @@ Set other, comments, and strings all back to on
 Check the checkbox to re-enable it
 
 
+****** VENV
+
+# 1. create virtual environment
+python -m venv venv
+
+# 2. activate it
+source venv/bin/activate          # Mac/Linux
+venv\Scripts\activate             # Windows
+
+# 3. verify
+which python                      # should point to venv/bin/python
+
+# 4. install dependencies
+pip install -r requirements.txt
+
+*****
+
+
+
 @dataclass
 class Config:
 
